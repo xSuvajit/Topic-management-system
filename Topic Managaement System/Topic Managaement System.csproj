@@ -7,4 +7,9 @@
     <RootNamespace>Topic_Managaement_System</RootNamespace>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\TMS.DTO\TMS.DTO.csproj" />
+    <ProjectReference Include="..\TMS.Manager\TMS.Manager.csproj" />
+  </ItemGroup>
+
 </Project>

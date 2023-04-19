@@ -1,4 +1,37 @@
-﻿// Please see documentation at https://docs.microsoft.com/aspnet/core/client-side/bundling-and-minification
-// for details on configuring this project to bundle and minify static web assets.
+﻿var alldata;
+$(function () {
+    $.ajax({
+        url: "Home/GetSomeValue",
+        success: (data) => {
+            alldata = data;
+        },
+    });
+});
 
-// Write your JavaScript code.
+const ShowValuesInConsole = () => {
+    $.ajax({
+        url: "Home/GetValue",
+        success: (data) => {
+            if (data) {
+                console.log(data);
+            }
+            else {
+                alert("no data");
+            }
+        }
+    });
+}
+
+const Export_To_Excel = () => {
+    $.ajax({
+        url: "Home/ExportToExcel",
+        success: (data) => {
+            if (data) {
+                console.log(data);
+            }
+            else {
+                alert("no data");
+            }
+        }
+    });
+}

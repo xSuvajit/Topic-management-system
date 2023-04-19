@@ -1,0 +1,54 @@
+﻿@model TMS.DTO.Topics
+<div style="float:right">
+    <input type="button" value="Show Values in Console" onclick=ShowValuesInConsole() />
+    <input type="button" value="Export To Excel" onclick=Export_To_Excel() />
+</div>
+<div>
+<nav>
+    <table id="allTopics" style="border:1px solid black; border-collapse:collapse; overflow:auto;">
+        <thead>
+            <tr style="border:2px solid black">
+                @{
+                    foreach (var item in Model.GetTopicsHeaders)
+                    {
+                        <td style="border:2px solid black">
+                            <label><b>@item.ToUpper()</b></label>
+                        </td>
+                    }
+                }
+            </tr>
+        </thead>
+        <tbody>
+            @foreach(var row in Model.GetTopics)
+            {
+                <tr style="border:1px solid black">
+                    <td style="border:1px solid black">
+                        @row.Id
+                    </td>
+                    <td style="border:1px solid black">
+                        @row.MyTopics
+                    </td>
+                    <td style="border:1px solid black">
+                        @row.Status
+                    </td>
+                    <td style="border:1px solid black">
+                        @row.topicCode
+                    </td>
+                    <td style="border:1px solid black">
+                        @row.createdBy
+                    </td>
+                    <td style="border:1px solid black">
+                        @row.created
+                    </td>
+                    <td style="border:1px solid black">
+                        @row.modifiedBy
+                    </td>
+                    <td style="border:1px solid black">
+                        @row.modified
+                    </td>
+                </tr>
+            }
+        </tbody>    
+    </table>    
+</nav>
+</div>
